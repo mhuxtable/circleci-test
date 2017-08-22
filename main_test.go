@@ -14,11 +14,11 @@ func TestHelloHandler(t *testing.T) {
 
 	handler.ServeHTTP(rr, req)
 
-	expectStatus := http.StatusOK
+	expectStatus := http.BadRequest
 	if status := rr.Code; status != expectStatus {
 		t.Errorf(
 			"handler returned wrong status code: got %v want %v",
-			status, http.StatusOK,
+			status, expectStatus,
 		)
 	}
 
