@@ -21,6 +21,7 @@ jobs:
       - run: go get -v -t -d ./...
       - run: go test -v
       - run: make
+      - run: .circleci/docker-envvars
       - run:
           name: Build Docker container
-          command: DOCKER_TAG="${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BRANCH}.${CIRCLE.SHA1}" make docker-build
+          command: make docker-build
