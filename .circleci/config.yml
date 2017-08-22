@@ -24,4 +24,4 @@ jobs:
       - run: .circleci/docker-envvars
       - run:
           name: Build Docker container
-          command: make docker-build
+          command: make build-docker
