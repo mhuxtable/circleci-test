@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run: .circleci/setup-gcloud
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...

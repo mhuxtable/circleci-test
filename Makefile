@@ -10,6 +10,7 @@ build: $(GOFILES)
 
 .PHONY: build-docker
 build-docker:
+	env
 	docker build -t ${DOCKER_TAG} .
 
 .PHONY: clean
