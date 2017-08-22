@@ -27,3 +27,5 @@ jobs:
       - run:
           name: Build Docker container
           command: make build-docker
+      - run: docker tag ${DOCKER_TAG} eu.gcr.io/${GOOGLE_PROJECT}/${DOCKER_TAG}
+      - run: docker push eu.gcr.io/${GOOGLE_PROJECT}/${DOCKER_TAG}
